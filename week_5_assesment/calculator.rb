@@ -26,3 +26,13 @@ calc_array = []
 	val2 = gets.chomp.to_i
 	puts "Would you like to +, -, *, or /"
 	option = gets.chomp.to_s
+	print "Your answer is: " 
+puts calculator(option, val1, val2)
+numbers = "#{val1} #{option} #{val2} ="
+puts "Would you like to make another calculation?  If yes enter 'yes' if not enter 'done'"
+continue = gets.chomp
+end 
+calc_array << numbers
+print calc_array.length
+puts " calculations were made:"
+print calc_array 
