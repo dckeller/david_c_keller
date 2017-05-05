@@ -1,0 +1,40 @@
+#links {
+	display: inline-block;
+	vertical-align: text-top;
+	width: 25%;
+}
+
+main {
+	display: inline-block;
+	font-family: helvetica;
+	font-size: 20px;
+	background-color: peru;
+	vertical-align: text-top;
+	width: 65%;
+
+}
+
+section {
+	background-color: green;
+	border: 2px dashed white;
+	padding: 10px;
+	margin: 5px;
+	font-style: italic;
+}
+
+li {
+	list-style: circle;
+}
+
+h2:hover {
+	background-color: salmon;
+	letter-spacing: 3px;
+}
+
+th {
+	border-bottom: 2px solid black;
+}
+
+tr:nth-child(odd) {
+	background-color: grey;
+}
