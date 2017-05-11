@@ -6,15 +6,7 @@ class Dancer
 		@names = names
 		@age = age
 		@card = []
-	end
-
-	def names
-		@names
-	end
-
-	def age
-		@age
-	end    
+	end  
 
 	def pirouette
 		"*twirls*"
@@ -27,6 +19,11 @@ class Dancer
 	def queue_dance_with(names)
 		@card << names
 	end
+
+	def begin_next_dance
+		new_list = @card.delete_at(0)
+		"Now dancing with #{new_list}."
+	end 
 
 	def spin
 		"*spin*"
@@ -41,4 +38,5 @@ p dancer.pirouette
 p dancer.bow
 p dancer.queue_dance_with("Mike Bary")
 p dancer.queue_dance_with("Anna Pav")
+dancer.begin_next_dance
 p dancer.spin
