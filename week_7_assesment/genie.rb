@@ -12,8 +12,8 @@ class Genie
 	def about
 		genie_name = "His name is #{@name}."
 		genie_age = "He is #{@age} years old."
-			puts genie_name
-			puts genie_age
+		puts genie_name
+		puts genie_age
 		return genie_name
 	end
 
@@ -29,22 +29,22 @@ class Genie
 		@wish = wish
 		@exit_lamp
 		@wish_array << wish
-			print "Your wish of #{wish},"
-				if @wish_array.count <= 3
-					@submitted_wishes[@wish] = true
-					puts " has been granted!"
-				else @wish_array.count > 3
-					@submitted_wishes[@wish] = false
-					@enter_lamp
-					puts " has not been granted, you have no more wishes!"
-				end
+		print "Your wish of #{wish},"
+		if @wish_array.count <= 3
+			@submitted_wishes[@wish] = true
+			puts " has been granted!"
+		else @wish_array.count > 3
+			@submitted_wishes[@wish] = false
+			@enter_lamp
+			puts " has not been granted, you have no more wishes!"
+		end
 	end   
 
 	def display_wish_history
 		puts "Here are your wishes so far:"
 		puts "---------------"
 		@submitted_wishes.each do |wish, granted|
-		puts "#{wish} #{granted}"
+			puts "#{wish} #{granted}"
 		end 
 		puts "---------------"
 	end
