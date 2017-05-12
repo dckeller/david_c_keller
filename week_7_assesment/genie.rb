@@ -51,19 +51,25 @@ class Genie
 
 =begin
 	def favorite_wish
+			@submitted_wishes.keys.each do |count_vowels|
+				total_vowels = count_vowels.count "aeiou"
+				puts total_vowels
+			end 
+	end 
+=end 
+
+	def favorite_wish
 		result = nil
 		max = 0
-		@submitted_wishes.values.each do |counted_vowels|
-			vowels = counted_vowels.scan(/[aeiou]/).size
+		@submitted_wishes.keys.each do |value|
+			vowels = value.scan(/[aeiouy]/).size
 			if vowels > max
 				max = vowels
-				result = counted_vowels
+				result = value
 				puts "My favorite wish to grant is #{result}!"
 			end
 		end
-	end   
-=end 
-
+	end
 
 end
 
@@ -78,7 +84,7 @@ genie.grant_wish("a candy")
 puts ''
 genie.display_wish_history
 puts ''
-##genie.favorite_wish
+genie.favorite_wish
 
 
 ##aladdin = Genie.new("Abubu", 203)
