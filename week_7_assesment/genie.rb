@@ -6,6 +6,7 @@ class Genie
 		@name = name
 		@age = age
 		@submitted_wishes = {}
+		@wish_array = []
 	end
 
 	def about
@@ -26,15 +27,12 @@ class Genie
 	def grant_wish(wish)
 		@wish = wish
 		@exit_lamp
-		wish_array = []
-		wish_array << wish
-		wish_count = 0
-		wish_array.each { |count| wish_count }
+		@wish_array << wish
 			print "Your wish of #{wish},"
-				if wish_count <= 3
+				if @wish_array.count <= 3
 					@submitted_wishes[@wish] = true
 					puts " has been granted!"
-				else wish_count > 3
+				else @wish_array.count > 3
 					@submitted_wishes[@wish] = false
 					@enter_lamp
 					puts " has not been granted, you have no more wishes!"
@@ -54,10 +52,13 @@ end
 
 genie = Genie.new("Bob", 20)
 genie.about
+puts ''
 genie.grant_wish("a pony")
 genie.grant_wish("a car")
 genie.grant_wish("a plane")
 genie.grant_wish("a man")
+genie.grant_wish("a candy")
+puts ''
 genie.display_wish_history
 
 
