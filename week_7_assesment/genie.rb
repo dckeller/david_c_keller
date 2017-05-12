@@ -14,6 +14,7 @@ class Genie
 		genie_age = "He is #{@age} years old."
 			puts genie_name
 			puts genie_age
+		return genie_name
 	end
 
 	def enter_lamp
@@ -48,6 +49,22 @@ class Genie
 		puts "---------------"
 	end
 
+=begin
+	def favorite_wish
+		result = nil
+		max = 0
+		@submitted_wishes.values.each do |counted_vowels|
+			vowels = counted_vowels.scan(/[aeiou]/).size
+			if vowels > max
+				max = vowels
+				result = counted_vowels
+				puts "My favorite wish to grant is #{result}!"
+			end
+		end
+	end   
+=end 
+
+
 end
 
 genie = Genie.new("Bob", 20)
@@ -60,6 +77,8 @@ genie.grant_wish("a man")
 genie.grant_wish("a candy")
 puts ''
 genie.display_wish_history
+puts ''
+##genie.favorite_wish
 
 
 ##aladdin = Genie.new("Abubu", 203)
