@@ -62,7 +62,7 @@ class Genie
 		result = nil
 		max = 0
 		@submitted_wishes.keys.each do |value|
-			vowels = value.scan(/[aeiouy]/).size
+			vowels = value.scan(/[aeiou]/).size
 			if vowels > max
 				max = vowels
 				result = value
